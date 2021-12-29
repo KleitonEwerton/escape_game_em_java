@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @brief                                   Classe usado para armazenar funções uteis para o projeto
  */
 public class Utils {
+    
     /**
     *@brief                                 Função que exibe uma mensagem de boas vindas ao usuário
     */
@@ -41,7 +42,7 @@ public class Utils {
     public static String[] entradaOrganizada(String entrada){
         /*ex: entrada ( b , 3 ) ex: saida[0]: b saida[1]: 3 */
         
-        if(entrada.charAt(0) != '(' || entrada.charAt(entrada.length() - 1) != ')'){
+        if(entrada.charAt(0) != '(' || entrada.charAt(entrada.length() - 1) != ')' || contOcorrencia(entrada, '(') != 1 || contOcorrencia(entrada, ')') != 1){
             String[] saida = {"erro", "erro"};
             return saida;}
         //Substitui todos os caracteres não necessários para validar a entrada
@@ -54,18 +55,20 @@ public class Utils {
     }
     
     /**
-    * @brief                            Função que lê um número do usuário 
-    * @return                           Número lido 
+    * @brief                                Função que lê um número do usuário 
+    * @param mensage                        Mensagem usada
+    * @return                               Número lido 
     */
     public static int leituraNumero(String mensage){
            
-            return Integer. parseInt(JOptionPane.showInputDialog(mensage, 30));
+            return Integer. parseInt(JOptionPane.showInputDialog(mensage, 10));
 
     }
     
     /**
-    * @brief                            Função que pergunta o número ao usuário até que seja válido
-    * @return                           Número lido
+    * @brief                                Função que pergunta o número ao usuário até que seja válido
+    * @param mensage                        Mensagem usada
+    * @return                               Número lido
     */
     public static int perguntaNumero(String mensage){
         
@@ -83,10 +86,10 @@ public class Utils {
     }
     
     /**
-    * @breif                            Método que pergunta a usuário se deseja jogar novamente
-    * @param mensage                    Mensagem a ser exibido
-    * @param title                      titulo da mensagem
-    * @return                           retorna se deseja ou não jogar novamente
+    * @breif                                Método que pergunta a usuário se deseja jogar novamente
+    * @param mensage                        Mensagem a ser exibido
+    * @param title                          Titulo da mensagem
+    * @return                               Retorna se deseja ou não jogar novamente
     */
     public static int perguntaJogarNovamente(String mensage,String title){
         
@@ -94,4 +97,21 @@ public class Utils {
         
     }
     
+    /**
+    * @brief                                Conta a ocorrência de um char em uma string
+    * @param entrada                        String a ser verificada
+    * @param busca                          Char a ser buscada
+    * @return                               Ocorrencia do char busca
+    */
+    public static int contOcorrencia(String entrada,char busca){
+        
+        int ocorrencia = 0;
+        
+        for(int i = 0;i<entrada.length();i++)
+            if(entrada.charAt(i) == busca)
+                ocorrencia += 1;
+        
+        return ocorrencia;
+        
+    }
 }

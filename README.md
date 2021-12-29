@@ -5,7 +5,7 @@
 
 
 <h4 align="center"> 
-	☕  Java project  ☕ Em produção  ☕
+	☕  Java project  ☕ Terminado  ☕
 </h4>
 
 ## 🏝️ Features

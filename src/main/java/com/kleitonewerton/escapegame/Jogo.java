@@ -9,12 +9,13 @@ import static com.kleitonewerton.escapegame.Utils.*;
 /**
  *
  * @author KleitonEwerton
+ * https://github.com/KleitonEwerton
  */
 public class Jogo {
     
-    
     /**
-    *@brief                                 função princiapal do programa 
+    * @brief                                 Função princiapal do programa 
+    * @param args
     */
     public static void main(String[] args){
         
