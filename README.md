@@ -10,7 +10,8 @@
 
 ## 🏝️ Features
 
-- [ ] Impedir que bombas bloqueiem o caminho
+- [x] Gerar um caminho que garanta a saída
+- [x] Limite de bombas até 50 
 
 
 ## 📌 Pré-requisitos
