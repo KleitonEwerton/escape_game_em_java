@@ -183,12 +183,13 @@ public class Tabuleiro {
             int auxPosY = getPosY();
             if(isEncontrouSaida())
                 if(finalizarJogo("PARABÉNS, VOCÊ VENCEU!!!\nDESEJA JOGAR NOVAMENTE?"))break;
+            
             if(!isEncontrouSaida() && this.gameOver)
                 if(finalizarJogo("GAME OVER, VOCÊ PERDEU!!!\nDESEJA JOGAR NOVAMENTE?"))break;
             try{
                 String entrada = leituraEntrada("JOGADOR, DIGITE SUA MOVIMENTAÇÃO EX: (B, 5) - direções(d, e, c, b)");
                 direcaoMovimento(entradaOrganizada(entrada)[0].toUpperCase().charAt(0), Integer.parseInt(entradaOrganizada(entrada)[1]));
-                if(auxPosX!= getPosX() || auxPosY != getPosY())listMovimentacoes.add(entrada);
+                if(auxPosX!= getPosX() || auxPosY != getPosY() || this.gameOver)listMovimentacoes.add(entrada);
                 printTabuleiro();
             }
             catch (Exception e){
