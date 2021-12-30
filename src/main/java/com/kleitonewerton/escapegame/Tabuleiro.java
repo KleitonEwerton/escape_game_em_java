@@ -189,7 +189,7 @@ public class Tabuleiro {
             try{
                 String entrada = leituraEntrada("JOGADOR, DIGITE SUA MOVIMENTAÇÃO EX: (B, 5) - direções(d, e, c, b)");
                 direcaoMovimento(entradaOrganizada(entrada)[0].toUpperCase().charAt(0), Integer.parseInt(entradaOrganizada(entrada)[1]));
-                if(auxPosX!= getPosX() || auxPosY != getPosY() || this.gameOver)listMovimentacoes.add(entrada);
+                if(auxPosX!= getPosX() || auxPosY != getPosY() || this.gameOver)listMovimentacoes.add(entrada.replaceAll(" ",""));
                 printTabuleiro();
             }
             catch (Exception e){

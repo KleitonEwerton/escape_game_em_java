@@ -41,14 +41,15 @@ public class Utils {
     */
     public static String[] entradaOrganizada(String entrada){
         /*ex: entrada ( b , 3 ) ex: saida[0]: b saida[1]: 3 */
-        
-        if(entrada.charAt(0) != '(' || entrada.charAt(entrada.length() - 1) != ')' || contOcorrencia(entrada, '(') != 1 || contOcorrencia(entrada, ')') != 1){
-            String[] saida = {"erro", "erro"};
-            return saida;}
+        String[] auxSaida = {"erro", "erro"};
+        if(entrada.charAt(0) != '(' || entrada.charAt(entrada.length() - 1) != ')' || contOcorrencia(entrada, '(') != 1 || contOcorrencia(entrada, ')') != 1)         
+            return auxSaida;
         //Substitui todos os caracteres não necessários para validar a entrada
         entrada = entrada.replaceAll("\\(","");
         entrada = entrada.replaceAll("\\)","");
         entrada = entrada.replaceAll(" ","");
+        if(entrada.charAt(1) != ',')
+            return auxSaida;
         
         return entrada.split(",");
      
